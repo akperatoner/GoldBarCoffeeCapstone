@@ -46,7 +46,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Location"/>
                                 <connections>
-                                    <segue destination="pmi-OJ-HQD" kind="show" id="XsW-dt-iKG"/>
+                                    <segue destination="Q8I-Ub-c8h" kind="show" id="vT3-WG-Niy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="84"/>
+            <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8tV-Rd-IoO">
@@ -91,20 +91,61 @@
             <point key="canvasLocation" x="870" y="492"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="Z4B-xO-KVE">
+        <scene sceneID="0fw-BO-Mnu">
             <objects>
-                <viewController storyboardIdentifier="Map VC" id="pmi-OJ-HQD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="P3C-j4-D49">
+                <viewController id="Q8I-Ub-c8h" customClass="ViewController" customModule="Goldbar_Espresso_Mobile_App" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lfn-T4-SoY"/>
+                        <viewControllerLayoutGuide type="bottom" id="bam-8K-50d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rml-ev-w4N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="0LW-9j-Odw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Vf-8x-eVm">
+                                <rect key="frame" x="0.0" y="230" width="414" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5s-p7-mxM">
+                                <rect key="frame" x="69" y="146" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Local Search"/>
+                                <connections>
+                                    <action selector="search:" destination="Q8I-Ub-c8h" eventType="touchUpInside" id="6ub-QC-CUh"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="search item" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nKU-u0-wGa">
+                                <rect key="frame" x="204" y="146" width="135" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SLK-8a-l9b">
+                                <rect key="frame" x="87" y="79" width="241" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="standard"/>
+                                    <segment title="satellite"/>
+                                    <segment title="hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="showMap:" destination="Q8I-Ub-c8h" eventType="valueChanged" id="8Ui-6x-OHx"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="942-6e-ihO"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ngM-nZ-3C3"/>
+                    <navigationItem key="navigationItem" id="fOY-uC-NNX"/>
+                    <connections>
+                        <outlet property="map" destination="3Vf-8x-eVm" id="fbN-ph-SIk"/>
+                        <outlet property="mapType" destination="SLK-8a-l9b" id="ILm-bS-5Cs"/>
+                        <outlet property="searchItem" destination="nKU-u0-wGa" id="7KS-CV-Tz1"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Afp-Gc-jMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j9U-9f-TRb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="84"/>
+            <point key="canvasLocation" x="1813.0434782608697" y="147.99107142857142"/>
         </scene>
     </scenes>
     <resources>
